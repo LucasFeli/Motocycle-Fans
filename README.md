@@ -31,4 +31,69 @@ Pagina dirigida  a los apasionados de las motocicletas
 | `/motocycles`               | Pagina Lista de Motocicletas    | solo usuario `<PrivateRoute>`  | Página que muestra todos los motocicletas del usuario en una lista.                |
 | `/motocycles/add`           | Formulario agregar Motocicleta      | solo usuario  `<PrivateRoute>`  |Formulario para crear una motocicleta, agrega una motocicleta nueva y redirige a la lista de motocicletas, una vez que se ha agregado la motocicleta |
 | `/motocycles/:id`           | Pagina de detalle de una motocicleta   | solo usuario `<PrivateRoute>`  | Página con los detalles de una moto y dos botones, uno para editar y otro para eliminar una moto  |
-                                       
+
+
+## Components
+
+- HomePage
+ 
+- LoginPage
+
+- SignupPage
+
+- MotocycleListPage  
+  * Motocycle Card
+  * Delete Motocycle Button
+  * <Link>  AddProjectForm
+
+  * Add Motocycle Form
+
+- Routes
+  * AnonRoute
+  * PrivateRoute
+
+- Common
+  * Navbar 
+
+## Services
+
+- Auth Service
+  - authApi.login(user)
+  - authApi.signup(user)
+  - authApi.logout()
+
+- Motocycle Service
+  - MotocycleApi.list()
+  - MotocycleApi.addMotocycle(motocycle)
+  - MotocycleApi.getMotocycleDetails(motocycleId)
+  - MotocycleApi.editMotocycle(motocycleId, motocycleBody)
+  - MotocycleApi.deleteMotocycle(motocycleId)
+
+# Server / Backend
+
+
+## Models
+
+**User model**
+
+```javascript
+{
+  username: {type: String, required: true },
+  email: {type: String, required: true, unique: true},
+  password: {type: String, required: true},
+  Motocycles: [ { type: mongoose.Schema.Types.ObjectId, ref: "Motocycle" } ]
+}
+```
+
+**Motocycle model**
+
+```javascript
+{
+  Marca: String,
+  Año: Number,
+  Motor: String,
+  image: String,
+  description: String,
+  
+},
+```
