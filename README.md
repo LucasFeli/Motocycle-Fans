@@ -23,12 +23,12 @@ Pagina dirigida  a los apasionados de las motocicletas
 
 
 ## React Router Routes (React App)
-| Path                      | Component            | Permissions                 | Behavior                                                     |
+| Path                      | Componente            | Permisos                 | Comportamiento                                                     |
 | ------------------------- | -------------------- | --------------------------- | ------------------------------------------------------------ |
-| `/`                       | HomePage             | public `<Route>`            | Home page                                                    |
-| `/signup`                 | SignupPage           | anon only  `<AnonRoute>`    | Signup form, link to login, navigate to homepage after signup |
-| `/login`                  | LoginPage            | anon only `<AnonRoute>`     | Login form, link to signup, navigate to homepage after login |
-| `/motocycles`               | ProjectsListPage     | user only `<PrivateRoute>`  | Page that shows all user´s motocycles in a list                |
-| `/motocycles/add`           | AddProjectForm       | user only `<PrivateRoute>`  |New Motocycle form, adds a new motocycle and redirects to motocycles list once motocycle has been added |
-| `/motocycles/:id`           | ProjectDetailPage    | user only `<PrivateRoute>`  | Page with the details of a motocycle, a edit and delete buttom ,  |
+| `/`                       | Pagina de inicio            | público `<Route>`            | Página de inicio                                                    |
+| `/signup`                 | Pagina de Registro           | solo anonimo `<AnonRoute>`    | Formulario de Registro, link to login, navigate to homepage after signup |
+| `/login`                  | Pagina inciar sesion           | solo anonimo `<AnonRoute>`     | Login form, link to signup, navigate to homepage after login |
+| `/motocycles`               | Pagina Lista de Motocicletas    | solo usuario `<PrivateRoute>`  | Página que muestra todos los motocicletas del usuario en una lista.                |
+| `/motocycles/add`           | Formulario agregar Motocicleta      | solo usuario  `<PrivateRoute>`  |Formulario para crear una motocicleta, agrega una motocicleta nueva y redirige a la lista de motocicletas, una vez que se ha agregado la motocicleta |
+| `/motocycles/:id`           | Pagina de detalle de una motocicleta   | solo usuario `<PrivateRoute>`  | Página con los detalles de una moto y dos botones, uno para editar y otro para eliminar una moto  |
                                        
