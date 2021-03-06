@@ -102,11 +102,24 @@ Pagina dirigida  a los apasionados de las motocicletas
 
 | Method | Endpoint         | Parameters                         | Return Value |
 | ------ | ---------------- | ---------------------------------- | ------------ |
-| POST   | `/auth/login`    | username, password                 | User logged  |
-| POST   | `/auth/signup`   | username, password, email          | User created |
-| POST   | `/auth/upload`   | file                               | User updated |
-| POST   | `/auth/edit`     | username,          | User updated |
-| POST   | `/auth/logout`   |                                    | OK Message   |
-| GET    | `/auth/loggedin` |                                    | User logged  |
-| PUT    | `/api/motocycles/:motocycleId` | {Marca, Año,Motor,image, description}              |  Edits motocycle in the DB      
-| DELETE | `/api/motocycles/:motocycleId` | id                   | Deletes motocycle    |
+| POST   | `/auth/login`    | username, password                 | Usuario ha iniciado sesion |
+| POST   | `/auth/signup`   | username, password, email          | Usuario creado |
+| POST   | `/auth/logout`   |                                    | Usuario ha terminado sesion   |
+| GET    | `/api/motocycles`                                     | Lista de Motocicletas|
+| GET    | `/api/projects/:projecId`| {id}                       | Muestra una motocicleta en detalle |
+| POST   | `/api/motocycles` | {Marca, Año,Motor,image, description} | Crea y guarda una motocicleta en la base de datos  
+| PUT    | `/api/motocycles/:motocycleId` | {Marca, Año,Motor,image, description}              |  Edita una motocicleta en la base de datos      
+| DELETE | `/api/motocycles/:motocycleId` | id                   | Elimina una motocicleta    |
+
+
+## Links
+
+### Trello/Kanban
+
+[Link to your trello board]
+
+### Git
+
+The url to your repository and to your deployed project
+
+### Slides
