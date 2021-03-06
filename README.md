@@ -116,7 +116,7 @@ Pagina dirigida  a los apasionados de las motocicletas
 
 ### Trello/Kanban
 
-[Link to your trello board]
+[Link to your trello board] https://trello.com/b/KniClov1/moto
 
 ### Git
 
