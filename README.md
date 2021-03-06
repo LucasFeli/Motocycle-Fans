@@ -97,3 +97,16 @@ Pagina dirigida  a los apasionados de las motocicletas
   
 },
 ```
+
+## API Endpoints (backend routes)
+
+| Method | Endpoint         | Parameters                         | Return Value |
+| ------ | ---------------- | ---------------------------------- | ------------ |
+| POST   | `/auth/login`    | username, password                 | User logged  |
+| POST   | `/auth/signup`   | username, password, email          | User created |
+| POST   | `/auth/upload`   | file                               | User updated |
+| POST   | `/auth/edit`     | username,          | User updated |
+| POST   | `/auth/logout`   |                                    | OK Message   |
+| GET    | `/auth/loggedin` |                                    | User logged  |
+| PUT    | `/api/motocycles/:motocycleId` | {Marca, Año,Motor,image, description}              |  Edits motocycle in the DB      
+| DELETE | `/api/motocycles/:motocycleId` | id                   | Deletes motocycle    |
