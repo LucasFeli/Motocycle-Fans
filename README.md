@@ -7,7 +7,7 @@ Pagina dirigida  a los apasionados de las motocicletas
 # User Stories
 
 - **Registrarse:** Como anon puedo registrarme en la aplicación para poder empezar a crear mis      propias motocicletas.
-- Inicio de sesión: Como usuario, puedo iniciar sesión en la aplicación para poder ver mis motocicletas y administrarlas.
+- **Inicio de sesión:** Como usuario, puedo iniciar sesión en la aplicación para poder ver mis motocicletas y administrarlas.
 - **Cerrar sesión:** como usuario, puedo cerrar la sesión de la aplicación para que nadie más pueda usarla.
 - Ver motocicletas Como usuario, quiero ver una lista de mi proyecto y también una vista de cada proyecto individualmente
 - **Agregar:**  Como usuario puedo agregar un proyecto
@@ -106,7 +106,7 @@ Pagina dirigida  a los apasionados de las motocicletas
 | POST   | `/auth/signup`   | username, password, email          | Usuario creado |
 | POST   | `/auth/logout`   |                                    | Usuario ha terminado sesion   |
 | GET    | `/api/motocycles`                                     | Lista de Motocicletas|
-| GET    | `/api/projects/:projecId`| {id}                       | Muestra una motocicleta en detalle |
+| GET    | `/api/motocycles/:motocycleId`| {id}                       | Muestra una motocicleta en detalle |
 | POST   | `/api/motocycles` | {Marca, Año,Motor,image, description} | Crea y guarda una motocicleta en la base de datos  
 | PUT    | `/api/motocycles/:motocycleId` | {Marca, Año,Motor,image, description}              |  Edita una motocicleta en la base de datos      
 | DELETE | `/api/motocycles/:motocycleId` | id                   | Elimina una motocicleta    |
