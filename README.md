@@ -120,6 +120,6 @@ Pagina dirigida  a los apasionados de las motocicletas
 
 ### Git
 
-The url to your repository and to your deployed project
+[The url to Frontend](https://github.com/LucasFeli/react-motocycle-app)
 
 ### Slides

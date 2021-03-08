@@ -8,5 +8,7 @@ require("./config/session.config")(app);
 
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
+const MotocycleRoutes = require("./routes/motocycle.route");
+app.use("/motocycles",MotocycleRoutes)
 
-app.listen(process.env.PORT, () => console.log("server running"));
+app.listen(process.env.PORT, () => console.log("server running 🏃‍ on port 4000"));
