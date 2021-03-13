@@ -13,7 +13,7 @@ const{
 route
   .get("/", getMotocycles)
   .get("/:motocycleId", getMotocycle)
-  .post("/", createMotocycle)
+  .post("/create", createMotocycle)
   .patch("/:motocycleId", updateMotocycle)
   .delete("/:motocycleId", deleteMotocycle);
 

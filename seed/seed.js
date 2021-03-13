@@ -1,7 +1,7 @@
 require("dotenv").config()
 const mongoose = require("mongoose")
 const data = require("./data")
-const Motocycle = require("../models/Motocycle.model")
+const Motocycle = require("../models/motocycle.model")
 
 const dbOptions = {
     useCreateIndex: true,

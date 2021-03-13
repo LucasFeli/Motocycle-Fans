@@ -24,6 +24,6 @@ exports.getMotocycles = async (req, res) => {
   
   exports.deleteMotocycle = async (req, res) => {
     const { motocycleId } = req.params;
-    await Motocycle.findOneAndDelete(motocycleId);
+    await Motocycle.findByIdAndDelete(motocycleId);
     res.status(200).json({ message: "Motocycle removed", motocycleId });
   };

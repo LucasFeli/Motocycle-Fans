@@ -1,4 +1,6 @@
-module.exports = [{
+module.exports = [
+    
+    {
     marca: "Yamaha TMAX 560",
     modelo : 2020,
     motor: "Dos cilindros en paralelo inclinados hacia delante, refrigerado por líquido, 4 tiempos, DOHC, 4 válvulas ",
@@ -20,5 +22,4 @@ module.exports = [{
     description: "La KTM 300 EXC ha estado a la vanguardia del loco ritmo de desarrollo que es el Enduro Extremo. Este ágil y ligera moto offroad no teme a ningún obstáculo y se convierte en la máquina definitiva para conquistar la legendaria Iron Giant. La edición limitada especial ERZBERGRODEO está cargada de piezas KTM PowerParts y luce un exclusivo kit de gráficos para conmemorar este evento tan especial.  ",
 },
 
-
-]
+];
