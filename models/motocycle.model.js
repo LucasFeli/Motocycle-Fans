@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const MotocycleSchema = new mongoose.Schema({
   marca: {
     type: String,
-    required: true,
+  
   },
   modelo: {
     type: Number,
-    required: true,
+   
   },
   motor: {
     type: String,

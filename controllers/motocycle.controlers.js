@@ -1,4 +1,5 @@
 const Motocycle = require("../models/motocycle.model")
+const fileParser = require("../config/cloudinary.config")
 
 exports.getMotocycles = async (req, res) => {
     const motocycles = await Motocycle.find();
@@ -14,6 +15,18 @@ exports.getMotocycles = async (req, res) => {
   exports.createMotocycle = async (req, res) => {
     const motocycle = await Motocycle.create(req.body);
     res.status(200).json(motocycle);
+  };
+
+  exports.imageMotocycle = async (req, res) => {
+   await fileParser.single('image');
+    
+    if(!req.file) {
+      next(new Error('No file uploaded'));
+      return;
+    }
+    console.log("req.file", req.file)
+    res.status(200).json(req.file.path);
+    
   };
   
   exports.updateMotocycle = async (req, res) => {

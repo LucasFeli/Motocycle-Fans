@@ -5,6 +5,7 @@ const{
     getMotocycles,
     getMotocycle,
     createMotocycle,
+    imageMotocycle,
     updateMotocycle,
     deleteMotocycle,
 }= require("../controllers/motocycle.controlers");
@@ -13,7 +14,7 @@ const{
 route
   .get("/", getMotocycles)
   .get("/:motocycleId", getMotocycle)
-  .post("/create", createMotocycle)
+  .post("/create", createMotocycle, imageMotocycle)
   .patch("/:motocycleId", updateMotocycle)
   .delete("/:motocycleId", deleteMotocycle);
 
