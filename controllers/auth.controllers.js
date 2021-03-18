@@ -8,9 +8,9 @@ const {
 
 exports.signup = async (req, res) => {
   try {
-    const { password, username,  email } = req.body;
-    const hasMissingCredentials = !password || !email || !username ;
-    console.log("body", req.body)
+    const { password, username, email } = req.body;
+    const hasMissingCredentials = !password || !email || !username;
+
     if (hasMissingCredentials) {
       return res.status(400).json({ message: "missing credentials" });
     }
@@ -20,24 +20,19 @@ exports.signup = async (req, res) => {
     }
 
     const user = await User.findOne({ email });
-    const isAlreadyName = await NewUser.findOne({ username });
 
     if (user) {
       return res.status(400).json({ message: "email alredy exists" });
-    }
-    if (isAlreadyName) {
-      return res.status("signup", {message: "this username already exist" });
     }
 
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
-    const newUser = await User.create({ username,email, hashedPassword });
+    const newUser = await User.create({ username, email, hashedPassword });
 
     req.session.userId = newUser._id;
 
     return res.status(200).json({ user: newUser.email, id: newUser._id });
-    console.log("success signup ")
   } catch (e) {
     if (isMongooseErrorValidation(e)) {
       return res.status(400).json({ message: "incorrect email format" });
@@ -76,7 +71,6 @@ exports.login = async (req, res) => {
     req.session.userId = user._id;
 
     return res.status(200).json({ user: user.email, id: user._id });
-    console.log("success ")
   } catch (e) {
     if (isMongooseErrorValidation(e)) {
       return res.status(400).json({ message: "incorrect email format" });
