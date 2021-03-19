@@ -1,4 +1,5 @@
 const Motocycle = require("../models/motocycle.model")
+const User = require("../models/User.model");
 const fileParser = require("../config/cloudinary.config")
 
 exports.getMotocycles = async (req, res) => {
@@ -13,7 +14,11 @@ exports.getMotocycles = async (req, res) => {
   };
   
   exports.createMotocycle = async (req, res) => {
+    console.log("SESSION:", req.session.userId)
     const motocycle = await Motocycle.create(req.body);
+    await User.findByIdAndUpdate(req.session.userId, {
+      $push: { myMotocycles: motocycle._id },
+    });
     res.status(200).json(motocycle);
   };
 

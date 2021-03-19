@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  motocycle: [{ type: mongoose.Schema.Types.ObjectId, ref: "Motocycle.model" }],
+  myMotocycles: [{ type: mongoose.Schema.Types.ObjectId, ref: "Motocycle.model" }],
 });
 
 module.exports = mongoose.model("User", UserSchema);
