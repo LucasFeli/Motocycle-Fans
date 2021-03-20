@@ -13,8 +13,9 @@ const{
 
 route
   .get("/", getMotocycles)
+  .post("/upload",imageMotocycle)
   .get("/:motocycleId", getMotocycle)
-  .post("/create", createMotocycle, imageMotocycle)
+  .post("/create", createMotocycle)
   .patch("/:motocycleId", updateMotocycle)
   .delete("/:motocycleId", deleteMotocycle);
 

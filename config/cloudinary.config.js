@@ -11,12 +11,15 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary,
-    folder: 'MotocycleFans',
-    allowedFormats: ['jpg', 'png'],
-    transformation: [{ width: 800, heigth: 500, crop: "limit" }],
-    filename: function (req, file, cb) {
-      cb(null, file.originalname); 
-    }
+  params: {
+    folder: 'motocycleFans',
+    format: async (req, file) => {
+      'mp4', 'jpg', 'png', 'pdf'
+    }, 
+    public_id: (req, file) => (
+      new Date().toISOString().replace(/:/g, "-") + file.originalname
+    ),
+  },
   
 });
 
