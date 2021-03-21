@@ -25,7 +25,7 @@ route
     }
     res.json(req.file.path);
   })
-  .patch("/:motocycleId", updateMotocycle)
+  .put("/:motocycleId", updateMotocycle)
   .delete("/:motocycleId", deleteMotocycle);
 
 module.exports = route;
