@@ -1,11 +1,12 @@
 const { Router } = require("express");
 const route = Router()
+const fileParser = require("../config/cloudinary.config");
 
 const{
     getMotocycles,
     getMotocycle,
     createMotocycle,
-    imageMotocycle,
+    
     updateMotocycle,
     deleteMotocycle,
 }= require("../controllers/motocycle.controlers");
@@ -13,9 +14,17 @@ const{
 
 route
   .get("/", getMotocycles)
-  .post("/upload",imageMotocycle)
+  
   .get("/:motocycleId", getMotocycle)
   .post("/create", createMotocycle)
+  .post('/upload', fileParser.single('image'), (req, res, next) => {
+    console.log('req.file', req.file);
+    if(!req.file) {
+      next(new Error('No file uploaded'));
+      return;
+    }
+    res.json(req.file.path);
+  })
   .patch("/:motocycleId", updateMotocycle)
   .delete("/:motocycleId", deleteMotocycle);
 

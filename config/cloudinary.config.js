@@ -12,7 +12,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: 'motocycleFans',
+    folder: 'MotocycleFans',
     format: async (req, file) => {
       'mp4', 'jpg', 'png', 'pdf'
     }, 
