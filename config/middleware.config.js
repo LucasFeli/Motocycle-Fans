@@ -2,7 +2,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-const origin = process.env.FRONT;
+const origin = process.env.FRONT; 
 const corsConfig = { origin: [origin], credentials: true };
 
 module.exports = (app) => {
