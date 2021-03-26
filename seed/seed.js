@@ -14,7 +14,7 @@ async function seedDb(){
     try {
         await mongoose.connect(process.env.MONGODB_URI, dbOptions)
         const motocycles = await Motocycle.create(data)
-        console.log(motocycles)
+        
         mongoose.connection.close()
     }catch(err){
         console.error(err)

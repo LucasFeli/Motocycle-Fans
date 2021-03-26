@@ -5,7 +5,7 @@ const MongoStore = require("connect-mongo");
 const { SESSION_SECRET, MONGODB_URI,NODE_ENV} = process.env;
 const isProduction = NODE_ENV === "production";
 const sameSite = isProduction ? "none" : "lax";
-console.log(MONGODB_URI);
+
 module.exports = (app) => {
   app.set("trust proxy", 1);
   app.use(
