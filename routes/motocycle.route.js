@@ -11,7 +11,7 @@ const {
 } = require("../controllers/motocycle.controlers");
 
 route
-  .get("/", getMotocycles)
+  .get("/motocycles", getMotocycles)
   .get("/:motocycleId", getMotocycle)
   .post("/create", createMotocycle)
   .post("/upload", fileParser.single("image"), (req, res, next) => {
