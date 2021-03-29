@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+require("dotenv").config();
 
 const origin = process.env.FRONT; 
 //const corsConfig = { origin: [origin], credentials: true };

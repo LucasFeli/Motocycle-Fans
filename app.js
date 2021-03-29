@@ -12,4 +12,5 @@ app.use("/auth", authRoutes);
 const MotocycleRoutes = require("./routes/motocycle.route");
 app.use("/motocycles",MotocycleRoutes)
 
-app.listen(process.env.PORT, () => console.log("server running 🏃‍ on port 4000"));
+app.listen(process.env.PORT, () => console.log(`${process.env.PORT}`));
+
