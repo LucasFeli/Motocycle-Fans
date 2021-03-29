@@ -25,6 +25,12 @@ exports.signup = async (req, res) => {
       return res.status(400).json({ message: "email alredy exists" });
     }
 
+    const name = await User.findOne({ username });
+
+    if (name) {
+      return res.status(400).json({ message: "username alredy exists" });
+    }
+
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
