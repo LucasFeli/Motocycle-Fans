@@ -6,7 +6,6 @@ const {
   getMotocycles,
   getMotocycle,
   createMotocycle,
-
   updateMotocycle,
   deleteMotocycle,
 } = require("../controllers/motocycle.controlers");

@@ -3,10 +3,17 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const origin = process.env.FRONT; 
-const corsConfig = { origin: [origin], credentials: true };
+//const corsConfig = { origin: [origin], credentials: true };
 
 module.exports = (app) => {
-  app.use(cors(corsConfig));
+  app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+  }); 
+  //app.use(cors(corsConfig));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cookieParser());
