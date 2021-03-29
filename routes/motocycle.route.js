@@ -11,10 +11,11 @@ const {
 } = require("../controllers/motocycle.controlers");
 
 route
-  .get("/motocycles", getMotocycles)
+  .get("/", getMotocycles)
   .get("/:motocycleId", getMotocycle)
   .post("/create", createMotocycle)
   .post("/upload", fileParser.single("image"), (req, res, next) => {
+    console.log("req.file", req.file)
     if (!req.file) {
       next(new Error("No file uploaded"));
       return;
@@ -22,6 +23,6 @@ route
     res.json(req.file.path);
   })
   .put("/:motocycleId", updateMotocycle)
-  .delete("/:motocycleId", deleteMotocycle);
+  .delete("/:motocycleId", deleteMotocycle); 
 
 module.exports = route;

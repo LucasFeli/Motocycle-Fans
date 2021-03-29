@@ -26,7 +26,7 @@ exports.createMotocycle = async (req, res) => {
 exports.updateMotocycle = async (req, res) => {
   const { motocycleId } = req.params;
   const motocycle = await Motocycle.findByIdAndUpdate(motocycleId, req.body);
-  res.status(200).json(motocycle);
+  res.status(200).json(motocycle); 
 };
 
 exports.deleteMotocycle = async (req, res) => {
